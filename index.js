@@ -31,8 +31,8 @@ async function run() {
     //allToys Routes
 
     app.get("/alltoys", async (req, res) => {
-      const result = await toysCollection.find().toArray();
-      res.send(result);
+       const result = await toysCollection.find().toArray();
+       res.send(result);
     });
 
     app.post("/alltoys", async (req, res) => {
