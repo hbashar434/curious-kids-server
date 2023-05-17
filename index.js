@@ -7,6 +7,7 @@ const app = express();
 
 const port = process.env.PORT || 5000;
 
+//middleware
 app.use(express.json());
 app.use(cors());
 
@@ -27,19 +28,19 @@ async function run() {
     const toysCollection = client.db("kidToysDB").collection("alltoys");
 
     //allToys Routes
-    app.get("/alltoys", async (req, res) => {
+    app.get("/all-toys", async (req, res) => {
       const result = await toysCollection.find().limit(20).toArray();
       res.send(result);
     });
 
-    app.post("/alltoys", async (req, res) => {
+    app.post("/all-toys", async (req, res) => {
       const toy = req.body;
       const result = await toysCollection.insertOne(toy);
       res.send(result);
     });
 
     // Single Toy Routes
-    app.get("/toydetails/:id", async (req, res) => {
+    app.get("/toy-details/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const result = await toysCollection.findOne(query);
@@ -55,7 +56,7 @@ async function run() {
     });
 
     //update by id
-    app.patch("/mytoys/:id", async (req, res) => {
+    app.patch("/my-toys/:id", async (req, res) => {
       const id = req.params.id;
       const filter = { _id: new ObjectId(id) };
       const toy = req.body;
@@ -69,7 +70,7 @@ async function run() {
     });
 
     // delete by id
-    app.delete("/mytoys/:id", async (req, res) => {
+    app.delete("/my-toys/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const result = await toysCollection.deleteOne(query);
