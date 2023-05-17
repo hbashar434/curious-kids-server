@@ -29,12 +29,18 @@ async function run() {
     const toysCollection = client.db("kidToysDB").collection("alltoys");
 
     //allToys Routes
-
     app.get("/alltoys", async (req, res) => {
       const result = await toysCollection.find().toArray();
       res.send(result);
     });
 
+    app.post("/alltoys", async (req, res) => {
+      const toy = req.body;
+      const result = await toysCollection.insertOne(toy);
+      res.send(result);
+    });
+
+    // Single Toy Routes
     app.get("/toydetails/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
@@ -42,9 +48,11 @@ async function run() {
       res.send(result);
     });
 
-    app.post("/alltoys", async (req, res) => {
-      const toy = req.body;
-      const result = await toysCollection.insertOne(toy);
+    // filter by category
+    app.get("/subcategory/:id", async (req, res) => {
+      const category = req.params.id;
+      const filter = { subcategory: category };
+      const result = await toysCollection.find(filter).toArray();
       res.send(result);
     });
 
