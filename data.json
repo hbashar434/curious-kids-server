@@ -1,0 +1,101 @@
+[
+  {
+    "pictureURL": "https://rb.gy/jx731",
+    "name": "CyberBot",
+    "sellerName": "Jennifer Taylor",
+    "sellerEmail": "jennifer@example.com",
+    "subcategory": "Robotic Pets",
+    "price": 19.99,
+    "rating": 4.2,
+    "availableQuantity": 3,
+    "description": "CyberBot is a lovable robotic pet that responds to touch, plays interactive games, and even dances to music. With its sleek design and AI capabilities, CyberBot offers companionship and entertainment for pet lovers of all ages."
+  },
+  {
+    "pictureURL": "https://rb.gy/ddycx",
+    "name": "NanoDrone",
+    "sellerName": "Jennifer Taylor",
+    "sellerEmail": "jennifer@example.com",
+    "subcategory": "Robotic Vehicles",
+    "price": 29.99,
+    "rating": 4.5,
+    "availableQuantity": 7,
+    "description": "NanoDrone is a small and agile robotic drone that can perform acrobatic maneuvers and capture stunning aerial footage. With its compact size and advanced flight controls, NanoDrone is perfect for drone enthusiasts and aspiring pilots."
+  },
+  {
+    "pictureURL": "https://rb.gy/m349a",
+    "name": "AstroExplorer",
+    "sellerName": "Jennifer Taylor",
+    "sellerEmail": "jennifer@example.com",
+    "subcategory": "Robotic Astronauts",
+    "price": 49.99,
+    "rating": 4.7,
+    "availableQuantity": 4,
+    "description": "AstroExplorer is a realistic robotic astronaut that simulates space missions and exploration. It features authentic spacesuit design, robotic arms for performing tasks, and an interactive control panel. With AstroExplorer, space enthusiasts can embark on their own interstellar adventures."
+  },
+  {
+    "pictureURL": "https://rb.gy/jx731",
+    "name": "GalaxyBot",
+    "sellerName": "Mark Johnson",
+    "sellerEmail": "mark@example.com",
+    "subcategory": "Robotic Pets",
+    "price": 27.99,
+    "rating": 4.4,
+    "availableQuantity": 10,
+    "description": "GalaxyBot is an adorable robotic pet with a space-themed design. It can light up, make cute sounds, and respond to touch. With its cosmic charm and interactive features, GalaxyBot is the perfect companion for space enthusiasts."
+  },
+  {
+    "pictureURL": "https://rb.gy/ddycx",
+    "name": "DroneX",
+    "sellerName": "Mark Johnson",
+    "sellerEmail": "mark@example.com",
+    "subcategory": "Robotic Vehicles",
+    "price": 49.99,
+    "rating": 4.7,
+    "availableQuantity": 5,
+    "description": "DroneX is a high-performance robotic drone that offers impressive flight capabilities. It comes with advanced stabilization technology, a built-in camera, and intuitive controls. With DroneX, users can capture stunning aerial footage and enjoy thrilling flight experiences."
+  },
+  {
+    "pictureURL": "https://rb.gy/m349a",
+    "name": "AstroExplorer",
+    "sellerName": "Mark Johnson",
+    "sellerEmail": "mark@example.com",
+    "subcategory": "Robotic Astronauts",
+    "price": 59.99,
+    "rating": 4.9,
+    "availableQuantity": 3,
+    "description": "AstroExplorer is a realistic robotic astronaut that simulates space missions and exploration. It features authentic spacesuit design, robotic arms for performing tasks, and an interactive control panel. With AstroExplorer, space enthusiasts can embark on their own interstellar adventures."
+  },
+  {
+    "pictureURL": "https://rb.gy/jx731",
+    "name": "TechieBot",
+    "sellerName": "Sarah Davis",
+    "sellerEmail": "sarah@example.com",
+    "subcategory": "Robotic Pets",
+    "price": 19.99,
+    "rating": 4.1,
+    "availableQuantity": 15,
+    "description": "TechieBot is an interactive robotic pet that provides companionship and entertainment. It can mimic real animal behaviors, respond to touch, and perform tricks. With TechieBot, users can experience the joy of having a pet without the responsibilities of pet care."
+  },
+  {
+    "pictureURL": "https://rb.gy/ddycx",
+    "name": "GigaRacer",
+    "sellerName": "Sarah Davis",
+    "sellerEmail": "sarah@example.com",
+    "subcategory": "Robotic Vehicles",
+    "price": 29.99,
+    "rating": 4.4,
+    "availableQuantity": 8,
+    "description": "GigaRacer is a high-speed robotic vehicle designed for racing enthusiasts. It features sleek aerodynamics, adjustable speed modes, and precision controls. With GigaRacer, users can experience thrilling races and compete with friends."
+  },
+  {
+    "pictureURL": "https://rb.gy/m349a",
+    "name": "AstroBlast",
+    "sellerName": "Sarah Davis",
+    "sellerEmail": "sarah@example.com",
+    "subcategory": "Robotic Astronauts",
+    "price": 39.99,
+    "rating": 4.7,
+    "availableQuantity": 12,
+    "description": "AstroBlast is an advanced robotic astronaut designed for simulated space missions. It can perform tasks like spacewalks, satellite repair, and experiments. With AstroBlast, space enthusiasts can embark on exciting space exploration adventures."
+  }
+]
