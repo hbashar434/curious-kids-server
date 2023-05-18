@@ -58,6 +58,14 @@ async function run() {
       res.send(result);
     });
 
+    // filter by email
+    app.get("/my-toys/:id", async (req, res) => {
+      const email = req.params.id;
+      const filter = { sellerEmail: email };
+      const result = await toysCollection.find(filter).toArray();
+      res.send(result);
+    });
+
     //update by id
     app.patch("/my-toys/:id", async (req, res) => {
       const id = req.params.id;
