@@ -25,7 +25,7 @@ async function run() {
   try {
     client.connect();
 
-    const toysCollection = client.db("kidToysDB").collection("alltoys");
+    const toysCollection = client.db("kidToysDB").collection("allToys");
 
     //allToys Routes
     app.get("/all-toys", async (req, res) => {
@@ -51,7 +51,10 @@ async function run() {
     app.get("/subcategory/:id", async (req, res) => {
       const category = req.params.id;
       const filter = { subcategory: category };
-      const result = await toysCollection.find(filter).toArray();
+      const options = {
+        projection: { name: 1, price: 1, pictureURL: 1, rating: 1 },
+      };
+      const result = await toysCollection.find(filter, options).toArray();
       res.send(result);
     });
 
