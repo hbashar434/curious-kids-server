@@ -88,6 +88,24 @@ async function run() {
       res.send(result);
     });
 
+    //create index
+    const indexKey = { name: 1 };
+    const indexOption = { name: "toyName" };
+    const result = await toysCollection.createIndex(indexKey, indexOption);
+    console.log(result);
+
+    // Search route
+    app.get("/search-toys/:text", async (req, res) => {
+      const text = req.params.text;
+      const result = await toysCollection
+        .find({
+          name: { $regex: text, $options: "i" },
+        })
+        .toArray();
+      res.send(result);
+    });
+    
+
     await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
