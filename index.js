@@ -54,7 +54,10 @@ async function run() {
       const options = {
         projection: { name: 1, price: 1, pictureURL: 1, rating: 1 },
       };
-      const result = await toysCollection.find(filter, options).toArray();
+      const result = await toysCollection
+        .find(filter, options)
+        .limit(3)
+        .toArray();
       res.send(result);
     });
 
