@@ -59,8 +59,8 @@ async function run() {
     });
 
     // filter by email
-    app.get("/my-toys/:id", async (req, res) => {
-      const email = req.params.id;
+    app.get("/my-toys/:email", async (req, res) => {
+      const email = req.params.email;
       const filter = { sellerEmail: email };
       const result = await toysCollection.find(filter).toArray();
       res.send(result);
@@ -92,7 +92,6 @@ async function run() {
     const indexKey = { name: 1 };
     const indexOption = { name: "toyName" };
     const result = await toysCollection.createIndex(indexKey, indexOption);
-    console.log(result);
 
     // Search route
     app.get("/search-toys/:text", async (req, res) => {
@@ -104,7 +103,16 @@ async function run() {
         .toArray();
       res.send(result);
     });
-    
+
+    // sorting route
+    app.get("/sorted-toys", async (req, res) => {
+      const result = await toysCollection
+        .find({ sellerEmail: req.query?.email })
+        .sort({ price: parseFloat(req.query?.sort) })
+        .toArray();
+
+      res.send(result);
+    });
 
     await client.db("admin").command({ ping: 1 });
     console.log(
