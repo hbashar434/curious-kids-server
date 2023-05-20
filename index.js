@@ -29,8 +29,17 @@ async function run() {
 
     //allToys Routes
     app.get("/all-toys", async (req, res) => {
-      const result = await toysCollection.find().limit(20).toArray();
-      res.send(result);
+      if (req.query?.quantity) {
+        const result = await toysCollection
+          .find()
+          .limit(parseInt(req.query?.quantity))
+          .toArray();
+        res.send(result);
+        return;
+      } else {
+        const result = await toysCollection.find().toArray();
+        res.send(result);
+      }
     });
 
     app.post("/all-toys", async (req, res) => {
@@ -70,7 +79,7 @@ async function run() {
     });
 
     //update by id
-    app.patch("/my-toys/:id", async (req, res) => {
+    app.patch("/my-toy/:id", async (req, res) => {
       const id = req.params.id;
       const filter = { _id: new ObjectId(id) };
       const toy = req.body;
@@ -84,7 +93,7 @@ async function run() {
     });
 
     // delete by id
-    app.delete("/my-toys/:id", async (req, res) => {
+    app.delete("/my-toy-list/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const result = await toysCollection.deleteOne(query);
@@ -111,7 +120,7 @@ async function run() {
     app.get("/sorted-toys", async (req, res) => {
       const result = await toysCollection
         .find({ sellerEmail: req.query?.email })
-        .sort({ price: parseFloat(req.query?.sort) })
+        .sort({ price: parseInt(req.query?.sort) })
         .toArray();
 
       res.send(result);
