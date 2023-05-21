@@ -26,6 +26,9 @@ async function run() {
     client.connect();
 
     const toysCollection = client.db("kidToysDB").collection("allToys");
+    const testimonialCollection = client
+      .db("kidToysDB")
+      .collection("testimonials");
 
     //allToys Routes
     app.get("/all-toys", async (req, res) => {
@@ -123,6 +126,12 @@ async function run() {
         .sort({ price: parseInt(req.query?.sort) })
         .toArray();
 
+      res.send(result);
+    });
+
+    //testimonial route
+    app.get("/reviews", async (req, res) => {
+      const result = await testimonialCollection.find().toArray();
       res.send(result);
     });
 
